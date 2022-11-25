@@ -7,12 +7,13 @@ import numpy as np
 import pandas as pd
 from scipy.io.arff import loadarff 
 
+#function used to load the dataset
 def LoadDataFrame(Path):
     DataExtraction = loadarff(Path)
     DF= pd.DataFrame(DataExtraction[0])
-    #CKD_DataDescription=DataExtraction[1]
     return DF
 
+#checks if the column exists in the dataframe (used in the unit test)
 def CheckColumn(DF,Col):
     if Col in DF.columns.values.tolist():
         return True
