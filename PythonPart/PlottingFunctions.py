@@ -49,3 +49,12 @@ def plotHeatmap(DF, cmap="Greens", annot=True):
     plt.figure(figsize=(10,8))
     DF.corr()
     seaborn.heatmap(DF.corr(),annot=True,cmap="Greens")
+    
+
+def NumericalValueDistribution(NumericalColumns):
+    fig, axes = plt.subplots(nrows=4, ncols=3, figsize=(15,15))
+    fig.subplots_adjust(hspace=0.5)
+    fig.suptitle('Distribution des attributs numériques')
+
+    for ax, feats in zip(axes.flatten(), NumericalColumns):
+        seaborn.histplot(CKD_dataframe[feats],ax=ax, kde=True)
