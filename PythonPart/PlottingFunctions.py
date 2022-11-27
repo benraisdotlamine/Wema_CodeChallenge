@@ -6,6 +6,7 @@ Created on 25 nov. 2022
 
 import matplotlib.pyplot as plt
 import seaborn 
+import plotly.express as px
 
 def PlotDistribution(DF,var1,Title,Legend):
     plt.figure(figsize=(50,25))
