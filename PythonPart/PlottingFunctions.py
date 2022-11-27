@@ -66,3 +66,12 @@ def NominalValueDistribution(CKD_dataframe,NominalCols):
 
     for ax, feats in zip(axes.flatten(), NominalCols):
         seaborn.countplot(CKD_dataframe[feats],ax=ax)
+
+
+def violin(col):
+    fig = px.violin(df, y=col, x="class", color="class", box=True, points="all", hover_data=df.columns)
+    return fig.show()
+
+def scatters(col1,col2):
+    fig = px.scatter(df, x=col1, y=col2, color="classification")
+    fig.show()
