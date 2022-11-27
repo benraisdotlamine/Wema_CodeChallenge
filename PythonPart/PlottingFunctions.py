@@ -58,3 +58,11 @@ def NumericalValueDistribution(CKD_dataframe,NumericalColumns):
 
     for ax, feats in zip(axes.flatten(), NumericalColumns):
         seaborn.histplot(CKD_dataframe[feats],ax=ax, kde=True)
+
+def NominalValueDistribution():
+    fig, axes = plt.subplots(nrows=4, ncols=3, figsize=(15,15))
+    fig.subplots_adjust(hspace=0.5)
+    fig.suptitle('Distribution des attributs nominal')
+
+    for ax, feats in zip(axes.flatten(), NumericalColumns):
+        seaborn.countplot(CKD_dataframe[feats],ax=ax, kde=True)
