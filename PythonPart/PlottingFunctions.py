@@ -55,7 +55,7 @@ def plotHeatmap(DF, cmap="Greens", annot=True):
 def NumericalValueDistribution(CKD_dataframe,NumericalColumns):
     fig, axes = plt.subplots(nrows=4, ncols=3, figsize=(15,15))
     fig.subplots_adjust(hspace=0.5)
-    fig.suptitle('Distribution des attributs numeriques')
+    fig.suptitle('Numerical attributes distribution')
 
     for ax, feats in zip(axes.flatten(), NumericalColumns):
         seaborn.histplot(CKD_dataframe[feats],ax=ax, kde=True)
@@ -63,7 +63,7 @@ def NumericalValueDistribution(CKD_dataframe,NumericalColumns):
 def NominalValueDistribution(CKD_dataframe,NominalCols):
     fig, axes = plt.subplots(nrows=4, ncols=3, figsize=(15,15))
     fig.subplots_adjust(hspace=0.5)
-    fig.suptitle('Distribution des attributs nominal')
+    fig.suptitle('Nominal attributes distribution')
 
     for ax, feats in zip(axes.flatten(), NominalCols):
         seaborn.countplot(CKD_dataframe[feats],ax=ax)
