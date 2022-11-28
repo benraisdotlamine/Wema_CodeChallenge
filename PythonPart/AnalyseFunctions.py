@@ -69,8 +69,8 @@ def CorrelationBetweenVariables(DF,Var1, Var2):
     return (corr_suited[corr_suited[Var1] == 'ckd'].groupby([Var2]).size().reset_index(name = 'count')).corr()
 
 
-def FillMissingValues(DF,ColName,printing=False):
-  for col in ColName:
+def FillMissingValues(DF,printing=False):
+  for col in DF.columns.values.tolist():
     if printing:
       print(col)
     AnalyseFunctions.FillAllMissingValues(DF,col,['ckd','notckd'])
