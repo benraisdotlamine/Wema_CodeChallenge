@@ -73,4 +73,4 @@ def FillMissingValues(DF,printing=False):
   for col in DF.columns.values.tolist():
     if printing:
       print(col)
-    AnalyseFunctions.FillAllMissingValues(DF,col,['ckd','notckd'])
+    FillAllMissingValues(DF,col,['ckd','notckd'])
