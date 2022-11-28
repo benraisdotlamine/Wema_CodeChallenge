@@ -67,4 +67,10 @@ def FillAllMissingValues(DF,Attribute,BinaryClassArray):
 def CorrelationBetweenVariables(DF,Var1, Var2):
     corr_suited = DF[[Var1, Var2]]
     return (corr_suited[corr_suited[Var1] == 'ckd'].groupby([Var2]).size().reset_index(name = 'count')).corr()
-    
+
+
+def FillMissingValues(DF,ColName,printing=False):
+  for col in ColName:
+    if printing:
+      print(col)
+    AnalyseFunctions.FillAllMissingValues(DF,col,['ckd','notckd'])
